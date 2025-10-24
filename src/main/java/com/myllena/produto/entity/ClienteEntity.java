@@ -18,9 +18,6 @@ public class ClienteEntity extends DefaultEntity {
     @Email
     @Column(unique = true)
     private String email;
-    @JsonIgnore
-    @OneToMany(orphanRemoval = true)
-    private Set<PedidoEntity> pedidos;
 
     public String getNome() {
         return nome;
@@ -46,11 +43,4 @@ public class ClienteEntity extends DefaultEntity {
         this.email = email;
     }
 
-    public Set<PedidoEntity> getPedidos() {
-        return pedidos;
-    }
-
-    public void setPedidos(Set<PedidoEntity> pedidos) {
-        this.pedidos = pedidos;
-    }
 }
