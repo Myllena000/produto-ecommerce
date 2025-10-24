@@ -1,0 +1,16 @@
+package com.myllena.produto.repository;
+
+import com.myllena.produto.controller.ClienteEntity;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ClienteRepository extends CrudRepository<ClienteEntity, Long> {
+
+    List<ClienteEntity> findAll();
+    List<ClienteEntity> findAllByNome(String nome); // por no RequestParam
+    Optional<ClienteEntity> findById(Long id);
+}
