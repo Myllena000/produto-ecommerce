@@ -1,4 +1,4 @@
-package com.myllena.produto.controller;
+package com.myllena.produto.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,19 +7,11 @@ import jakarta.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
-public class ProdutoEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+public class ProdutoEntity extends DefaultEntity {
 
     private String nome;
     private double preco;
     private LocalDate dataVenc;
-
-    public Long getId() {
-        return id;
-    }
 
     public String getNome() {
         return nome;

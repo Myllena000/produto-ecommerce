@@ -1,6 +1,6 @@
 package com.myllena.produto.repository;
 
-import com.myllena.produto.controller.ProdutoEntity;
+import com.myllena.produto.entity.ProdutoEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

@@ -1,5 +1,6 @@
 package com.myllena.produto.controller;
 
+import com.myllena.produto.entity.ProdutoEntity;
 import com.myllena.produto.repository.ProdutoRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
