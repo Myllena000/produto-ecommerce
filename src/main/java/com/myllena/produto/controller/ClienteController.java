@@ -9,9 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @RestController
 public class ClienteController {
@@ -32,9 +30,8 @@ public class ClienteController {
     @PostMapping("/clientes/{id}/pedidos")
     public ResponseEntity<PedidoEntity> registrarPedidoCliente(@PathVariable Long id, @RequestBody PedidoEntity pedidoEntity) {
         var cliente = clienteRepository.findById(id).get();
+
         pedidoEntity.setCliente(cliente);
-
-
         return ResponseEntity.status(HttpStatus.CREATED).body(pedidoRepository.save(pedidoEntity));
     }
 
@@ -43,20 +40,12 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.OK).body(clienteRepository.findAll());
     }
 
-    /**
-     * Corrigir
-     *
-     * @param id
-     * @return
-     */
     @GetMapping("/clientes/{id}")
     public ResponseEntity<ClienteEntity> listarPorId(@PathVariable Long id) {
-        var semId = clienteRepository.findById(id).isEmpty();
-        if (semId) {
+        if (clienteRepository.findById(id).isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.status(HttpStatus.OK).body(clienteRepository.findById(id).get());
-
     }
 
     @PatchMapping("/clientes/{id}")
@@ -70,7 +59,7 @@ public class ClienteController {
     @DeleteMapping("/clientes/{id}")
     ResponseEntity<ClienteEntity> deletar(@PathVariable Long id) {
         clienteRepository.deleteById(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 
 

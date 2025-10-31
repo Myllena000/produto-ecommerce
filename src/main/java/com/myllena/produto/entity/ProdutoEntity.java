@@ -1,9 +1,6 @@
 package com.myllena.produto.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
@@ -36,4 +33,6 @@ public class ProdutoEntity extends DefaultEntity {
     public void setDataVenc(LocalDate dataVenc) {
         this.dataVenc = dataVenc;
     }
+
+
 }

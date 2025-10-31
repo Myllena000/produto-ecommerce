@@ -1,12 +1,10 @@
 package com.myllena.produto.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.myllena.produto.controller.validator.PhoneNumber;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-import java.util.Set;
 
 @Entity
 public class ClienteEntity extends DefaultEntity {

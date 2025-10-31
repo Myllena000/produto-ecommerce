@@ -11,6 +11,5 @@ import java.util.Optional;
 public interface ClienteRepository extends CrudRepository<ClienteEntity, Long> {
 
     List<ClienteEntity> findAll();
-    List<ClienteEntity> findAllByNome(String nome); // por no RequestParam
     Optional<ClienteEntity> findById(Long id);
 }
