@@ -1,6 +1,6 @@
 package com.myllena.produto.controller;
 
-import com.myllena.produto.entity.ProdutoEntity;
+import com.myllena.produto.repository.entity.ProdutoEntity;
 import com.myllena.produto.repository.ProdutoRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +38,7 @@ public class ProdutoController {
     @GetMapping("/produtos/{id}")
     public ResponseEntity<ProdutoEntity> listarPorId(@PathVariable Long id) {
         return produtoRepository.findById(id)
-                .map(produto -> ResponseEntity.ok(produto))
+                .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 

@@ -1,7 +1,7 @@
 package com.myllena.produto.controller;
 
-import com.myllena.produto.entity.ClienteEntity;
-import com.myllena.produto.entity.PedidoEntity;
+import com.myllena.produto.repository.entity.ClienteEntity;
+import com.myllena.produto.repository.entity.PedidoEntity;
 import com.myllena.produto.repository.ClienteRepository;
 import com.myllena.produto.repository.PedidoRepository;
 import jakarta.validation.Valid;
